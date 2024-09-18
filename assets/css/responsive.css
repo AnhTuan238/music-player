@@ -1,0 +1,55 @@
+/* Mobile & tablet */
+@media (max-width: 1023px) {
+    :root {
+        --dashboard-height: 480px;
+    }
+
+    .nav__bars-btn {
+        display: block;
+    }
+
+    .dashboard {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .lyrics {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: var(--dashboard-height);
+        width: var(--dashboard-height)
+    }
+
+    .lyric_name {
+        margin-left: 0px;
+    }
+
+    .lyric_text {
+        margin-left: 0px;
+        box-sizing: content-box;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+   .hide-on-tablet 
+   {
+    display: none;
+   } 
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile 
+   {
+    display: none;
+   }
+}
+
+/* PC */
+@media (min-width: 1023px) {
+   .hide-on-pc 
+   {
+    display: none;
+   }
+}
