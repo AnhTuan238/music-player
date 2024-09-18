@@ -1,8 +1,6 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
 const PLAYER_STORAGE_KEY = 'SONG_PLAYER';
-
 const heading = $('header h2');
 const author = $('header h3');
 const cdThumb = $('.cd-thumb');
@@ -137,7 +135,6 @@ const app = {
             '230',
         ]
     },
-
     {
         name: 'See you again',
         singer: 'Charlie Puth',
@@ -229,10 +226,7 @@ const app = {
             '266',
             '278',
         ],
-
     },
-
-
     {
         name: 'Gió nổi lên rồi',
         singer: 'MinL',
@@ -283,7 +277,6 @@ const app = {
         image: './assets/img/song10.jpg',
         lyric: 'Updating...'
     }
-
     ],
 
     // Cấu hình
@@ -297,7 +290,6 @@ const app = {
         const htmls = this.songs.map((song, index) => {
             return `
             <div class="song ${index === this.currentIndex ? 'active': ''}" data-index="${index}">
-                
                 <div class="thumb"
                     style="background-image: url('${song.image}');">      
                 </div>
@@ -313,7 +305,6 @@ const app = {
                     </div>    
             </div>`
         })
-        
         playlist.innerHTML = htmls.join('');
     }, 
 
@@ -338,7 +329,6 @@ const app = {
                 </div>
             `
         })
-
         listTablet.innerHTML = htmlsa.join('');
     },
 
@@ -393,26 +383,19 @@ const app = {
         function highlightLyric() {
             const currentTime = audio.currentTime;
             const spanElement = document.querySelector(`#lyric${currentIndex + 1 }`);
-        
             if (currentTime >= _this.currentSong.timeNode[currentIndex]) {
                 if (previousSpanElement ) {
                     previousSpanElement.classList.remove('highlight');
                 }
-        
                 spanElement.classList.add('highlight');
-                
                 previousSpanElement = spanElement;
                 currentIndex++;
-        
                 if (currentIndex >= _this.currentSong.timeNode.length) {
                     clearInterval(lyricInterval);
                 }
             }
         };
-
-        
         const lyricInterval = setInterval(highlightLyric, 200);
-
         // Khi song được play 
         audio.onplay = function() {
             _this.isPlaying = true
@@ -420,8 +403,7 @@ const app = {
             cdThumbAnimate.play(); 
             currentIndex = 0;
             clearInterval(lyricInterval); 
-            setInterval(highlightLyric, 200); 
-              
+            setInterval(highlightLyric, 200);   
         }
 
         // Khi song được pause 
@@ -530,7 +512,6 @@ const app = {
                     _this.loadCurrentSong();
                     // _this.render();
                     _this.renderTablet();
-
                     audio.play();
                 }
             }
@@ -572,7 +553,6 @@ const app = {
     loadConfig: function() {
         this.isRandom = this.config.isRandom;
         this.isRepeat = this.config.isRepeat;
-
     },
 
     // Khi chuyển bài
