@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Music player</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./assets/css/grid.css">
+      <link rel="stylesheet" href="./assets/css/style.css">
+      <link rel="stylesheet" href="./assets/css/responsive.css">
+  </head>
+  <body>
+    <div class="grid wide"> 
+      <!-- ICON BAR -->
+      <input type="checkbox" name="" hidden class="nav__input" id="nav-mobile-input">
+
+      <label for="nav-mobile-input" class="nav__overlay"></label>
+
+      <nav class="nav__mobile hide-on-pc ">
+        <label for="nav-mobile-input" class="nav__mobile-close">  
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+        </label>
+      </nav>
+
+      <label for="nav-mobile-input" class="nav__bars-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+        <h2 style="color: white">LIST</h2>
+      </label>
+
+      <!-- MUSIC -->
+      <div class="container">
+          <!-- Music_app -->
+          <div class="col p-6 t-12 m-12">
+            <div class="player  ">
+              <!-- Dashboard -->
+              <div class="dashboard">
+                <!-- Header -->
+                <header>
+                  <h2>Bài hát</h2>
+                  <h3>Ca sỹ</h3>
+                </header>
+            
+                <!-- CD -->
+                <div class="cd">
+                  <div class="cd-thumb" 
+                  style="background-image: url(https://scontent.fsgn8-1.fna.fbcdn.net/v/t39.30808-1/356388483_1440849713154383_3653973930900950815_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeEBCfTWc8cnhVR2YzC7DK9nsslvy1eS80qyyW_LV5LzSsCCmp6s923OKItmCZ_nBxWHUtQQsZ3cXA3q6KBUKAMH&_nc_ohc=Irj8ruFSWOQQ7kNvgE7sd8T&_nc_ht=scontent.fsgn8-1.fna&oh=00_AYD-8_wCGhZaAZBlzK9gGGlNqpclsyd7xqpVb9TZbl9d2g&oe=66C5EB7B);" >
+                  </div>
+                </div>
+            
+                <!-- Control -->
+                <div class="control">
+                  <div class="btn btn-repeat">
+                    <i class="fas fa-redo"></i>
+                  </div>
+                  <div class="btn btn-prev">
+                    <i class="fas fa-step-backward"></i>
+                  </div>
+                  <div class="btn btn-toggle-play">
+                    <i class="fas fa-pause icon-pause"></i>
+                    <i class="fas fa-play icon-play"></i>
+                  </div>
+                  <div class="btn btn-next">
+                    <i class="fas fa-step-forward"></i>
+                  </div>
+                  <div class="btn btn-random">
+                    <i class="fas fa-random"></i>
+                  </div>
+                </div>
+            
+                  <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                  <audio id="audio" src=""></audio>
+                  <div class="timeContainer">
+                      <span class="time" id="currentTime">0:00</span> 
+                      <span class="time" id="durationTime">0:00</span>
+                  </div>
+      
+              </div>
+
+              <!-- Playlist -->
+              <div class="playlist  hide-on-tablet hide-on-mobile">
+              </div>
+            </div>    
+          </div>
+        
+          <!-- Lyrics -->
+          <div class="col p-6 t-12 m-12">
+            <div class="lyrics">  
+              <h2 class="lyric_name" >LYRICS</h2> 
+              <p class="lyric_text">Lyrics_content</p>
+            </div>
+          </div>
+      </div>  
+    </div> 
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
